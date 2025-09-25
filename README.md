@@ -1,1 +1,1 @@
-# First Test (should take 10ish minutes)
+# This repository is the HTML and CSS code for my blog.
