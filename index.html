@@ -5,7 +5,7 @@
     <meta charset="utf-8" />
     <meta name="viewport" content="width=device-width, initial-scale=1.0">
     <!-- Title -->
-    <title>Just Some Math Ranting and Results</title>
+    <title>Some Math Ranting and Results</title>
     <!-- Instructs web browser to use some icon be the little icon in the tab (called favicon). -->
     <link rel="icon" type="image/png" sizes="32x32" href="./assets/images/favicon.png">
     <!-- Remix (open source library of icons) icons -->
@@ -18,22 +18,78 @@
 
 <body>
     <!-- Header -->
-    <header>
+    <header class="header" id="header">
         <div class="container">
-            <h1><a href="#">About My Work</a></h1>
+            <h1><a href="#">Some Math Ranting and Results</a></h1>
             <p class="tagline">This is my blog where I plan to share overviews and results of my projects. Feel free to explore my work and reach out via email with any questions.</p>
-<!--        <nav>
-                <ul>
-                    <li><a href="#">Home</a></li>
-                    <li><a href="#">Topics</a></li>
-                    <li><a href="#">About</a></li>
-                    <li><a href="#">Contact</a></li>
-                </ul>
-            </nav>
--->     </div>
-    </header>
+        </div>
 
+        <!-- Navigation Toolbar -->
+        <nav class="navbar container">
+            <a href="./index.html">
+                <h2 class="logo">BlogIcon</h2>
+            </a>
+
+            <div class="menu" id="menu">
+                <ul class="list">
+                    <li class="list-item">
+                        <a href="#" class="list-item current">Home</a>
+                    </li>
+                    <li class="list-item">
+                        <a href="#" class="list-item">Topics</a>
+                    </li>
+                    <li class="list-item">
+                        <a href="#" class="list-item">About</a>
+                    </li>
+                    <li class="list-item">
+                        <a href="#" class="list-item">Contact</a>
+                    </li>
+                </ul>
+            </div>
+
+        <!-- Buttons and Themes -->
+        <div class="list list-right">
+            <!-- Light/Dark Theme Toggle Button -->
+            <button class="btn place-items-center" id="theme-toggle-btn">
+                <i class="ri-sun-line sun-icon"></i>
+                <i class="ri-moon-line moon-icon"></i>
+            </button>
+
+            <!-- Search Line -->
+            <button class="btn place-items-center" id="menu-toggle-icon">
+                <i class="ri-menu-3-line open-menu-icon"></i>
+                <i class="ri-close-line close-menu-icon"></i>
+            </button>
+
+            <a href="#" class="list-link screen-sm-hidden">Sign in</a>
+            <a href="#" class="btn sign-up-btn fancy-border screen-sm-hidden">
+                <span>Sign up</span>
+            </a>
+        </div>
+    </header>
     <main class="container">
+
+    <!-- Search -->
+    <div class="search-form-container container" id="search-form-container">
+
+        <div class="form-container-inner">
+
+            <form action="" class="form">
+                <input class="form-input" type="text" placeholder="What are you looking for?">
+                <button class="btn form-btn" type="submit">
+                    <i class="ri-search-line"></i>
+                </button>
+            </form>
+            <span class="form-note">Or press Esc to close.</span>
+        </div>
+
+        <button class="btn form-close-btn place-items-center" id="form-close-btn">
+            <i class="ri-close-btn"></i>
+        </button>
+    </div>
+
+    <!-- Featured posts -->
+    
         
     <main class="container">
         <section class="posts-list">
@@ -89,6 +145,7 @@ $e^{i\pi} + 1 = 0$
 
 
 </html>
+
 
 
 
