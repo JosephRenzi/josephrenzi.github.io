@@ -20,7 +20,7 @@ const scrollHeader = () => {
     }
 }
 
-window.addEventListener('scroll', scrollHeader)
+window.addEventListener('scroll', scrollHeader);
 
 // Open menu & search form pop-up
 const menuToggleIcon = selectElement('#menu-toggle-icon');
