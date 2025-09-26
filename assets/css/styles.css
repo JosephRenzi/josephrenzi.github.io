@@ -1,184 +1,277 @@
-﻿/* Base Styles & Typography */
+﻿
+/* Import font */
+@import url('https://fonts.googleapis.com/css2?family=Poppins:wght@300;400;600;700&display=swap');
+
+/* Custom properties */
 :root {
-    --primary-color: #34495e;
-    --secondary-color: #ecf0f1;
-    --accent-color: #e74c3c;
-    --text-color: #2c3e50;
-    --link-color: #3498db;
-    /* Updated Font Stacks */
-    --font-serif: Georgia, 'Times New Roman', Times, serif;
-    --font-mono: 'Courier New', Courier, monospace;
-    --shadow: 0 4px 6px rgba(0,0,0,0.1);
+    --light-color: #fff;
+    --light-color-alt: #afb6cd;
+    --primary-background-color: #131417;
+    --secondary-background-color: #252830;
+    --hover-light-color: var(--light-color);
+    --hover-dark-color: var(--primary-background-color);
+    --gradient-color: linear-gradient(
+        115deg,#4fcf70,#fad648,#a767e5,#12bcfe,#44ce7b);
+    --transparent-light-color: rgba(255,255,255,.05);
+    --transparent-dark-color: rgba(0,0,0,.75);
+    --font-family: 'Poppins', sans-serif;
+    --font-size-xsm: 1.2rem;
+    --font-size-sm: 1.6rem;
+    --font-size-md: 2.4rem;
+    --font-size-lg: 3rem;
+    --font-size-xl: 4rem;
+    --gap: 2rem;
+    --margin-sm: 2rem;
+    --margin-md: 3rem;
+    --item-min-height-sm: 20rem;
+    --item-min-height-md: 30rem;
+}
+
+/* Base Styles */
+/* * is the universal selector */
+*{
+    margin: 0;
+    padding: 0;
+    box-sizing: border-box;
+}
+
+
+html {
+    /* OLD: Pixels since using REM units 
+    font-size: 10px; */
+    /* Using percentages instead to scale better when zooming */
+
 }
 
 body {
-    font-family: var(--font-serif);
-    line-height: 1.6;
-    color: var(--text-color);
-    background-color: var(--secondary-color);
-    margin: 0;
-    padding: 0;
-}
-
-.container {
-    max-width: 1000px;
-    margin: 0 auto;
-    padding: 0 20px;
+    font-family: var(--font-family);
+    font-size: var(--font-size-sm);
+    color: var(--light-color-alt);
+    background-color: var(--primary-background-color);
+    letter-spacing: 1px;
+    transition: background color .25s, color .25s;
 }
 
 a {
-    color: var(--link-color);
     text-decoration: none;
-    transition: color 0.3s;
+    color: inherit;
 }
 
-    a:hover {
-        color: var(--accent-color);
-    }
-
-h1, h2, h3 {
-    font-family: var(--font-mono);
-    color: var(--primary-color);
-    line-height: 1.2;
+img {
+    max-width: 100%;
+    display: block;
 }
 
-    h1 a {
-        color: var(--primary-color);
-    }
+ul {
+    list-style: none;
+}
 
-/* Header & Navigation */
-header {
-    background: var(--primary-color);
-    color: white;
-    padding: 2rem 0;
+input,
+button {
+    font: inherit;
+    color: inherit;
+    border: none;
+    background-color: transparent;
+    outline: none;
+}
+
+i {
+    font-size: var(--font-size-md);
+}
+
+/* Theme Color Change */
+body.light-theme {
+    --light-color: #3d3d3d;
+    --light-color-alt: rbga(0,0,0,.6);
+    --primary-background-color: #fff;
+    --secondary-background-color: #f1f1f1;
+    --hover-light-color: #fff;
+    --transparent-light-color: var(--secondary-background-color);
+    --transparent-dark-color: rgba(0,0,0,.1);
+}
+
+/* Resusable Classes */
+/* The . is here as these are classes (I think?) */
+.container {
+    max-width: 160rem;
+    margin: 0 auto;
+    padding: 0 1.5rem;
+}
+
+
+.place-items-center {
+    display: inline-flex;
+    align-content: center;
+    justify-content: center;
+}
+
+
+.screen-sm-hidden {
+    display: none;
+}
+
+/* Header */
+.header {
+    background-color: var(--secondary-background-color);
+    position: fixed;
+    top: 0;
+    left: 0;
+    width: 100%;
+    /* High Z-value index so that it stays on top of content (?) */
+    z-index: 999;
+}
+
+.navbar {
+    display: flex;
+    align-items: center;
+    justify-content: space-between;
+    padding-block: 1.5rem;
+}
+
+.logo {
+    font-size: var(--font-size-md);
+    color: var(--light-color);
+}
+
+.menu {
+    position: absolute;
+    top: 8.5rem;
+    right: 1.5rem;
+    width: 23rem;
+    background-color: var(--secondary-background-color);
+    opacity: 0;
+    transform: scale(0);
+    transition: opacity .25s ease-in;
+}
+
+.list {
+    display: flex;
+    align-items: center;
+    gap: var(--gap);
+}
+
+.menu > .list {
+    flex-direction: column;
+}
+
+.list-link.current {
+    color: var(--light-color);
+}
+
+.close-menu-icon {
+    display: none;
+}
+
+.btn {
+    cursor: pointer;
+}
+
+.list-link:hover,
+.btn:hover,
+.btn:hover span {
+    color: var(--light-color);
+}
+
+.moon-icon {
+    display: none;
+}
+
+.light-theme .sun-icon {
+    display: none;
+}
+
+.light-theme .moon-icon {
+    display: block;
+}
+
+/* Header Javascript Styles */
+.header.activated {
+    box-shadow: 0 1px .5rem var(--transparent-light-color);
+    /* background-color: red; */
+}
+
+.menu.activated {
+    box-shadow: 1px 1px 1rem var(--transparent-light-color);
+    opacity: 1;
+    transform: scale(1);
+}
+
+.menu.toggle-icon.activated .open-menu-icon {
+    display: none;
+}
+
+.menu.toggle-icon.activated .open-menu-icon {
+    display: block;
+}
+
+/* Search */
+.search-form-container {
+    width: 100%;
+    max-width: 100%;
+    height: 100vh;
+
+    background-color: var(--primary-background-color);
+
+    position: fixed;
+    top: 0;
+    left: 0;
+    z-index: 9999;
+    display:flex;
+    opacity: 0;
+    transform: scale(0);
+    transition: opacity .5s;
+}
+
+.form-container-inner {
+    margin: auto;
+    display: flex;
+    flex-direction: column;
+    gap: var(--gap);
     text-align: center;
-    box-shadow: var(--shadow);
 }
 
-    header h1 {
-        font-size: 2.5rem;
-        margin: 0;
-    }
-
-    header .tagline {
-        font-family: var(--font-mono);
-        font-size: 1rem;
-        margin-top: 0.5rem;
-        opacity: 0.8;
-    }
-
-    header nav ul {
-        list-style: none;
-        padding: 0;
-        margin-top: 1rem;
-        display: flex;
-        justify-content: center;
-        gap: 1.5rem;
-    }
-
-    header nav a {
-        color: white;
-        font-family: var(--font-mono);
-        font-weight: 700;
-    }
-
-/* Main Content Layout */
-main {
-    display: grid;
-    grid-template-columns: 3fr 1fr;
-    gap: 3rem;
-    margin-top: 3rem;
+.form {
+    display: flex;
+    justify-content: center;
 }
 
-/* Post List */
-.posts-list {
-    display: grid;
-    gap: 2rem;
+.form-input,
+.form-btn {
+    display: inline-block;
+    border: 2px solid var(--secondary-background-color);
+    padding: 1.5rem;
 }
 
-.post-card {
-    background: white;
-    padding: 2rem;
-    border-radius: 8px;
-    box-shadow: var(--shadow);
+.form-input {
+    border-right: none;
+    width: 100%;
 }
 
-    .post-card h2 {
-        margin-top: 0;
-        font-size: 1.5rem;
-    }
-
-.post-meta {
-    font-family: var(--font-mono);
-    font-size: 0.9rem;
-    color: #7f8c8d;
-    margin-top: -1rem;
-    margin-bottom: 1rem;
+.form-btn {
+    margin-left: -.5rem;
+    border-left: none;
+    background-color: var(--secondary-background-color);
+    width: 8rem;
 }
 
-.math-block {
-    background-color: #f8f8f8;
-    border-left: 4px solid var(--link-color);
-    padding: 1em;
-    font-family: var(--font-mono);
-    margin-top: 1rem;
-    overflow-x: auto;
+.form-note {
+    font-size: var(--font-size-xsm);
+    align-self: flex-end;
+
 }
 
-/* Sidebar */
-.sidebar {
-    display: grid;
-    gap: 2rem;
+.form-btn {
+    position: ;
+    top: 1.5rem;
+    right: 1.5rem;
+    border: 2px solid var(--secondary-background-color);
+    width: 4rem;
+    height: 4rem;
 }
 
-.about-me, .tags {
-    background: white;
-    padding: 2rem;
-    border-radius: 8px;
-    box-shadow: var(--shadow);
+/* Form JavaScript styles */
+.search-form-container.activated {
+    opacity: 1;
+    transform: scale(1);
 }
-
-    .about-me h3, .tags h3 {
-        margin-top: 0;
-        border-bottom: 2px solid var(--accent-color);
-        padding-bottom: 0.5rem;
-    }
-
-    .tags a.tag {
-        display: inline-block;
-        background: var(--primary-color);
-        color: white;
-        padding: 0.5rem 1rem;
-        border-radius: 20px;
-        margin-right: 0.5rem;
-        margin-bottom: 0.5rem;
-        font-family: var(--font-mono);
-        font-size: 0.9rem;
-        transition: background-color 0.3s;
-    }
-
-        .tags a.tag:hover {
-            background: var(--accent-color);
-        }
-
-/* Footer */
-footer {
-    background: var(--primary-color);
-    color: white;
-    text-align: center;
-    padding: 1.5rem 0;
-    margin-top: 3rem;
-}
-
-    footer p {
-        margin: 0;
-        font-family: var(--font-mono);
-        font-size: 0.9rem;
-    }
-
-/* Responsive Design */
-@media (max-width: 768px) {
-    main {
-        grid-template-columns: 1fr;
-    }
 }
