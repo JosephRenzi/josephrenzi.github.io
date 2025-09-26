@@ -40,7 +40,7 @@ html {
     /* OLD: Pixels since using REM units 
     font-size: 10px; */
     /* Using percentages instead to scale better when zooming */
-
+    font-size: 62.5%;
 }
 
 body {
@@ -98,13 +98,11 @@ body.light-theme {
     padding: 0 1.5rem;
 }
 
-
 .place-items-center {
     display: inline-flex;
     align-content: center;
     justify-content: center;
 }
-
 
 .screen-sm-hidden {
     display: none;
@@ -138,6 +136,7 @@ body.light-theme {
     top: 8.5rem;
     right: 1.5rem;
     width: 23rem;
+    padding: 1.5rem;
     background-color: var(--secondary-background-color);
     opacity: 0;
     transform: scale(0);
@@ -200,7 +199,7 @@ body.light-theme {
     display: none;
 }
 
-.menu.toggle-icon.activated .open-menu-icon {
+.menu.toggle-icon.activated .close-menu-icon {
     display: block;
 }
 
@@ -209,9 +208,7 @@ body.light-theme {
     width: 100%;
     max-width: 100%;
     height: 100vh;
-
     background-color: var(--primary-background-color);
-
     position: fixed;
     top: 0;
     left: 0;
@@ -238,26 +235,29 @@ body.light-theme {
 .form-input,
 .form-btn {
     display: inline-block;
+    outline: none;
     border: 2px solid var(--secondary-background-color);
     padding: 1.5rem;
+    color: var(--light-color-alt);
 }
 
 .form-input {
     border-right: none;
     width: 100%;
+    background-color: var(--primary-background-color);
 }
 
 .form-btn {
     margin-left: -.5rem;
     border-left: none;
     background-color: var(--secondary-background-color);
+    text-transform: uppercase;
     width: 8rem;
 }
 
 .form-note {
     font-size: var(--font-size-xsm);
     align-self: flex-end;
-
 }
 
 .form-btn {
