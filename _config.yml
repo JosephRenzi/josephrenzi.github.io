@@ -27,7 +27,7 @@ search: true
 
 author:
   name   : "Joseph Renzi"
-  avatar : "/assets/images/bio-photo.jpg"
+  avatar : "/assets/images/MaePicture2.jpg"
   bio    : "Hello, I'm a recent PhD graduate in applied mathematics. My research focused on developing new techniques for qualitatively describing and solving complex nonlinear PDEs, with applications in fluid dynamics and materials science."
   links:
     - label: "✉ Email"
