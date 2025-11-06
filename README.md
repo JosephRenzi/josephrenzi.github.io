@@ -1,1 +1,1 @@
-# This repository is the HTML and CSS code for my blog.
+# Blog - Probably math, might come up with more later.
