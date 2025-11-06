@@ -13,7 +13,7 @@
 # you will see them accessed via {{ site.title }}, {{ site.email }}, and so on.
 # You can create any custom variable you would like, and they will be accessible
 # in the templates via {{ site.myvariable }}.
-title: "Ranting and Raving Renzi"
+title: "Renzi's Rants and Research"
 email: &EMAIL "jdrenzi64@gmail.com"
 description:
   #Write an awesome description for your new site here. You can edit this
@@ -28,7 +28,7 @@ search: true
 author:
   name   : "Joseph Renzi"
   avatar : "/assets/images/bio-photo.jpg"
-  bio    : "My awesome biography constrained to a sentence or two goes here."
+  bio    : "Hello, I'm a recent PhD graduate in applied mathematics. My research focused on developing new techniques for qualitatively describing and solving complex nonlinear PDEs, with applications in fluid dynamics and materials science."
   links:
     - label: "✉ Email"
       icon: "fab"
@@ -94,3 +94,4 @@ tag_archive:
   type: liquid
 
   path: /tags/
+
