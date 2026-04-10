@@ -23,18 +23,16 @@
     </script>
 </head>
 <body>
-    <!-- Header section that will appear on all pages -->
+    <!-- The header section that will appear on all pages -->
     <header>
-        <nav>
-            <h1><a href="{{ '/' | relative_url }}">{{ site.title }}</a></h1>
-            <!-- Add more links here later, e.g., an About page. -->
+        <h1><a href="{{ '/' | relative_url }}">{{ site.title }}</a></h1>
+        
+        <!-- Navigation Menu -->
+        <nav style="margin-top: 10px;">
+            <a href="{{ '/' | relative_url }}" style="margin-right: 15px;">Home</a>
+            <a href="{{ '/about.html' | relative_url }}">About</a>
         </nav>
     </header>
-
-    <!-- This tag injects the content of your individual pages (like index.md) -->
-    <main>
-        {{ content }}
-    </main>
 
     <!-- Footer section -->
     <footer>
