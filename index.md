@@ -6,8 +6,17 @@ layout: default
 
 Hello! I'm Joseph. This is my personal corner of the internet where I write about mathematics and code.
 
-### A Quick Math Test
+---
 
-Test Run:
+### Recent Articles
 
-$$ e^{i\pi} + 1 = 0 $$
+<!-- This "for loop" goes through every post in the _posts folder -->
+<ul>
+  {% for post in site.posts %}
+    <li>
+      <!-- This creates a clickable link to the post, and prints the date -->
+      <span>{{ post.date | date: "%B %d, %Y" }}</span> &raquo; 
+      <a href="{{ post.url | relative_url }}">{{ post.title }}</a>
+    </li>
+  {% endfor %}
+</ul>
