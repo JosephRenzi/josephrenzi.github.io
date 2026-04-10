@@ -1,0 +1,7 @@
+# Site Settings
+title: Joseph Renzi
+description: A blog about mathematics, coding, and everything in between.
+url: "https://josephrenzi.github.io"
+
+# We are using a custom layout, so we don't need a pre-built Jekyll theme
+theme: minima
