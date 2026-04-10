@@ -1,0 +1,44 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>{{ site.title }}</title>
+    
+    <!-- Link to custom CSS file -->
+    <link rel="stylesheet" href="{{ '/assets/css/style.css' | relative_url }}">
+
+    <!-- MathJax Configuration for beautiful math rendering -->
+    <script>
+      MathJax = {
+        tex: {
+          inlineMath: [['$', '$'], ['\\(', '\\)']],
+          displayMath: [['$$', '$$'],['\\[', '\\]']],
+          processEscapes: true 
+        }
+      };
+    </script>
+    <script type="text/javascript" id="MathJax-script" async
+      src="https://cdn.jsdelivr.net/npm/mathjax@3/es5/tex-chtml.js">
+    </script>
+</head>
+<body>
+    <!-- Header section that will appear on all pages -->
+    <header>
+        <nav>
+            <h1><a href="{{ '/' | relative_url }}">{{ site.title }}</a></h1>
+            <!-- Add more links here later, e.g., an About page. -->
+        </nav>
+    </header>
+
+    <!-- This tag injects the content of your individual pages (like index.md) -->
+    <main>
+        {{ content }}
+    </main>
+
+    <!-- Footer section -->
+    <footer>
+        <p>&copy; 2026 {{ site.title }}. All rights reserved.</p>
+    </footer>
+</body>
+</html>
