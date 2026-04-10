@@ -27,12 +27,24 @@
     <header>
         <h1><a href="{{ '/' | relative_url }}">{{ site.title }}</a></h1>
         
-<!-- Navigation Menu -->
+        <!-- Navigation Menu -->
         <nav style="margin-top: 10px;">
             <a href="{{ '/' | relative_url }}" style="margin-right: 15px;">Home</a>
             <a href="{{ '/about/' | relative_url }}">About</a>
         </nav>
     </header>
+
+    <!-- This tag tells Jekyll to inject the text from your .md files right here -->
+    <main>
+        {{ content }}
+    </main>
+
+    <!-- Footer section -->
+    <footer>
+        <p>&copy; 2026 {{ site.title }}. All rights reserved.</p>
+    </footer>
+</body>
+</html>
 
     <!-- Footer section -->
     <footer>
